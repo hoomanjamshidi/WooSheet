@@ -1,0 +1,969 @@
+/* WooSheet — استایل رابط کاربری. همه‌چیز محلی، فونت وزیرمتن، RTL. */
+
+.woosheet-wrap,
+.woosheet-wrap * {
+	box-sizing: border-box;
+	font-family: 'Vazirmatn', Tahoma, sans-serif;
+}
+
+.woosheet-wrap {
+	margin: 16px 12px 16px 0;
+	direction: rtl;
+}
+
+/* ----- نوار ابزار ----- */
+.woosheet-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 12px 14px;
+	margin-bottom: 10px;
+}
+
+.woosheet-title {
+	font-size: 18px;
+	font-weight: 700;
+	margin: 0;
+	color: #1d2327;
+	flex: 0 0 auto;
+}
+
+.woosheet-tools {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin-inline-start: auto;
+}
+
+.woosheet-input,
+.woosheet-select {
+	font-family: inherit;
+	font-size: 13px;
+	padding: 6px 10px;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	background: #fff;
+	min-height: 34px;
+}
+
+#woosheet-search {
+	min-width: 240px;
+}
+
+.woosheet-wrap .button {
+	font-family: inherit;
+	border-radius: 6px;
+	min-height: 34px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.woosheet-order-btn {
+	min-width: 38px;
+	font-weight: 700;
+}
+
+/* ----- نوار وضعیت ----- */
+.woosheet-status-bar {
+	font-size: 12px;
+	color: #50575e;
+	padding: 2px 4px 8px;
+	min-height: 18px;
+}
+
+/* ----- گرید ----- */
+.woosheet-grid {
+	background: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.06 );
+}
+
+/* ظاهر اکسلی برای Tabulator */
+.tabulator {
+	font-family: 'Vazirmatn', Tahoma, sans-serif;
+	font-size: 13px;
+	border: 1px solid #d7d7db;
+}
+
+.tabulator .tabulator-header {
+	background: #f6f7f7;
+	font-weight: 700;
+}
+
+.tabulator .tabulator-header .tabulator-col {
+	background: #f6f7f7;
+	border-inline-start: 1px solid #e4e4e7;
+}
+
+.tabulator .tabulator-row {
+	border-bottom: 1px solid #ededf0;
+}
+
+.tabulator .tabulator-row.tabulator-row-even {
+	background: #fbfbfc;
+}
+
+.tabulator .tabulator-row:hover {
+	background: #f0f6fc;
+}
+
+.tabulator .tabulator-cell {
+	border-inline-start: 1px solid #ededf0;
+	padding: 6px 8px;
+}
+
+/* ستون‌های قابل ویرایش حس اکسل بدهند */
+.tabulator .tabulator-cell.tabulator-editable:hover {
+	box-shadow: inset 0 0 0 2px #2271b1;
+	cursor: cell;
+	background: #fff;
+}
+
+.tabulator .tabulator-cell.tabulator-editing {
+	box-shadow: inset 0 0 0 2px #2271b1;
+	padding: 0;
+}
+
+.tabulator .tabulator-cell.tabulator-editing input,
+.tabulator .tabulator-cell.tabulator-editing select {
+	font-family: inherit;
+	font-size: 13px;
+	padding: 6px 8px;
+	border: 0;
+	height: 100%;
+}
+
+.ws-col-id {
+	color: #787c82;
+	background: #fafafa;
+}
+
+.ws-col-price {
+	font-variant-numeric: tabular-nums;
+	font-weight: 500;
+}
+
+.ws-col-date {
+	cursor: pointer;
+}
+
+/* بازخورد ذخیره */
+.tabulator .tabulator-cell.ws-saving {
+	background: #fff7e6 !important;
+}
+
+.tabulator .tabulator-cell.ws-ok {
+	background: #e6f6e6 !important;
+	transition: background 1s;
+}
+
+.tabulator .tabulator-cell.ws-err {
+	background: #fde8e8 !important;
+	transition: background 1.4s;
+}
+
+/* عناصر داخل سلول */
+.ws-muted {
+	color: #a7aaad;
+}
+
+.ws-date {
+	background: #eef4fb;
+	border-radius: 4px;
+	padding: 2px 6px;
+}
+
+.ws-date-empty {
+	font-size: 12px;
+}
+
+.ws-range {
+	color: #1d2327;
+}
+
+.ws-var-cell {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 6px;
+	width: 100%;
+	min-height: 28px;
+	cursor: pointer;
+}
+
+.ws-var-cell:hover .ws-range {
+	color: #2271b1;
+}
+
+.ws-mini-btn {
+	font-family: inherit;
+	font-size: 12px;
+	border: 1px solid #c3c4c7;
+	background: #f6f7f7;
+	border-radius: 5px;
+	padding: 3px 8px;
+	cursor: pointer;
+	color: #2271b1;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.ws-mini-btn:hover {
+	background: #2271b1;
+	color: #fff;
+	border-color: #2271b1;
+}
+
+.ws-badge {
+	font-size: 11px;
+	padding: 2px 8px;
+	border-radius: 10px;
+}
+
+.ws-badge-simple {
+	background: #eef1f4;
+	color: #50575e;
+}
+
+.ws-badge-var {
+	background: #e7f0fb;
+	color: #2271b1;
+}
+
+.ws-status {
+	font-size: 12px;
+	padding: 2px 8px;
+	border-radius: 10px;
+}
+
+.ws-status-publish {
+	background: #e6f6e6;
+	color: #1a7a1a;
+}
+
+.ws-status-draft {
+	background: #f1f1f1;
+	color: #646970;
+}
+
+.ws-status-pending {
+	background: #fff4e0;
+	color: #996800;
+}
+
+.ws-status-private {
+	background: #fde8ef;
+	color: #a3266e;
+}
+
+/* ----- صفحه‌بندی ----- */
+.woosheet-footer {
+	margin-top: 10px;
+}
+
+.woosheet-pagination {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: center;
+}
+
+.woosheet-page-info {
+	font-size: 13px;
+	color: #50575e;
+}
+
+/* ----- مودال ----- */
+.woosheet-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba( 0, 0, 0, 0.45 );
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	z-index: 100000;
+	padding: 40px 16px;
+	overflow: auto;
+}
+
+.woosheet-modal {
+	background: #fff;
+	border-radius: 10px;
+	width: 100%;
+	max-width: 460px;
+	box-shadow: 0 10px 40px rgba( 0, 0, 0, 0.25 );
+	direction: rtl;
+}
+
+.woosheet-modal-wide {
+	max-width: 880px;
+}
+
+.woosheet-modal-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 18px;
+	border-bottom: 1px solid #e4e4e7;
+}
+
+.woosheet-modal-head h2 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.woosheet-modal-close {
+	border: 0;
+	background: transparent;
+	font-size: 24px;
+	line-height: 1;
+	cursor: pointer;
+	color: #787c82;
+}
+
+.woosheet-modal-body {
+	padding: 18px;
+}
+
+.woosheet-modal-actions {
+	display: flex;
+	gap: 10px;
+	margin-top: 16px;
+}
+
+.woosheet-field {
+	display: block;
+	margin-bottom: 12px;
+}
+
+.woosheet-field-label {
+	display: block;
+	font-size: 13px;
+	margin-bottom: 5px;
+	color: #1d2327;
+	font-weight: 500;
+}
+
+.woosheet-field .woosheet-input,
+.woosheet-field select {
+	width: 100%;
+}
+
+.woosheet-check {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 13px;
+	margin: 6px 0 4px;
+}
+
+/* ----- جدول متغیرها ----- */
+.ws-var-table,
+.ws-import-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+
+.ws-var-table th,
+.ws-var-table td,
+.ws-import-table th,
+.ws-import-table td {
+	border: 1px solid #e4e4e7;
+	padding: 6px 8px;
+	text-align: right;
+}
+
+.ws-var-table thead th,
+.ws-import-table thead th {
+	background: #f6f7f7;
+	font-weight: 700;
+}
+
+.ws-var-name {
+	font-weight: 500;
+	max-width: 220px;
+}
+
+.ws-var-input {
+	font-family: inherit;
+	font-size: 13px;
+	width: 100%;
+	padding: 5px 7px;
+	border: 1px solid #c3c4c7;
+	border-radius: 5px;
+}
+
+.ws-var-input.ws-saving {
+	background: #fff7e6;
+}
+
+.ws-var-input.ws-ok {
+	background: #e6f6e6;
+}
+
+.ws-var-input.ws-err {
+	background: #fde8e8;
+}
+
+.ws-var-date {
+	cursor: pointer;
+	background: #eef4fb;
+}
+
+/* ----- تصویر شاخص ----- */
+.ws-thumb-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ws-thumb {
+	width: 42px;
+	height: 42px;
+	object-fit: cover;
+	border-radius: 5px;
+	border: 1px solid #e4e4e7;
+	cursor: pointer;
+	background: #f6f7f7;
+}
+
+.ws-thumb-empty {
+	display: inline-block;
+	background: #f0f0f1 url( 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23a7aaad" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>' ) center/20px no-repeat;
+}
+
+.ws-thumb:hover {
+	border-color: #2271b1;
+}
+
+/* ----- منوی ستون‌ها ----- */
+.ws-colmenu {
+	position: relative;
+	display: inline-block;
+}
+
+.ws-col-panel {
+	position: absolute;
+	top: calc( 100% + 4px );
+	inset-inline-end: 0;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	box-shadow: 0 8px 24px rgba( 0, 0, 0, 0.16 );
+	padding: 8px;
+	z-index: 99999;
+	min-width: 180px;
+	max-height: 360px;
+	overflow: auto;
+}
+
+.ws-col-toggle {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 5px 6px;
+	font-size: 13px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.ws-col-toggle:hover {
+	background: #f0f6fc;
+}
+
+/* ----- مدیریت ویژگی‌ها و متغیرها ----- */
+.ws-attr-section {
+	border: 1px solid #e4e4e7;
+	border-radius: 8px;
+	padding: 12px 14px;
+	margin-bottom: 16px;
+	background: #fafbfc;
+}
+
+.ws-attr-section h3,
+.ws-var-section h3 {
+	margin: 0 0 10px;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.ws-attr-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+
+.ws-attr-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.ws-attr-name {
+	width: 160px;
+	flex: 0 0 auto;
+}
+
+.ws-attr-values {
+	flex: 1 1 220px;
+	min-width: 180px;
+}
+
+.ws-attr-check {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+.ws-attr-tax {
+	font-size: 11px;
+	flex-basis: 100%;
+}
+
+.ws-attr-actions {
+	display: flex;
+	gap: 8px;
+	margin-top: 10px;
+	border-top: 1px solid #ededf0;
+	padding-top: 10px;
+}
+
+.ws-attr-add {
+	margin-top: 2px;
+}
+
+.ws-var-section {
+	margin-top: 4px;
+}
+
+.ws-empty {
+	font-size: 13px;
+	color: #50575e;
+	background: #fff8ec;
+	border: 1px dashed #e0c98a;
+	border-radius: 6px;
+	padding: 12px;
+}
+
+.ws-del-btn {
+	color: #b32d2e;
+	border-color: #e7b6b6;
+}
+
+.ws-del-btn:hover {
+	background: #b32d2e;
+	border-color: #b32d2e;
+	color: #fff;
+}
+
+.ws-cell-input {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	font-family: inherit;
+	font-size: 13px;
+	padding: 6px 8px;
+	direction: ltr;
+	text-align: right;
+	unicode-bidi: plaintext;
+}
+
+/* ----- ایمپورت ----- */
+.ws-import-hint {
+	font-size: 13px;
+	color: #50575e;
+	background: #f6f7f7;
+	border-radius: 6px;
+	padding: 10px 12px;
+	margin: 0 0 12px;
+}
+
+.ws-import-output {
+	margin-top: 14px;
+	max-height: 50vh;
+	overflow: auto;
+}
+
+.ws-summary {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 12px;
+}
+
+.ws-chip {
+	font-size: 12px;
+	background: #eef1f4;
+	border-radius: 12px;
+	padding: 4px 10px;
+}
+
+.ws-chip-ok {
+	background: #e6f6e6;
+	color: #1a7a1a;
+}
+
+.ws-chip-warn {
+	background: #fff4e0;
+	color: #996800;
+}
+
+.ws-chip-err {
+	background: #fde8e8;
+	color: #b32d2e;
+}
+
+.ws-import-table tr.ws-row-error td {
+	background: #fdecec;
+}
+
+.ws-import-table tr.ws-row-skipped td {
+	background: #fff8ec;
+}
+
+.ws-import-table tr.ws-row-updated td {
+	background: #f0f9f0;
+}
+
+.ws-success {
+	color: #1a7a1a;
+	font-size: 13px;
+	padding: 8px 0;
+}
+
+.ws-error {
+	color: #b32d2e;
+	font-size: 13px;
+	padding: 8px 0;
+}
+
+.ws-loading {
+	color: #50575e;
+	font-size: 13px;
+	padding: 12px 0;
+}
+
+/* ----- توست ----- */
+.woosheet-toasts {
+	position: fixed;
+	bottom: 24px;
+	inset-inline-start: 24px;
+	z-index: 100001;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.woosheet-toast {
+	background: #1d2327;
+	color: #fff;
+	padding: 10px 16px;
+	border-radius: 8px;
+	font-size: 13px;
+	opacity: 0;
+	transform: translateY( 10px );
+	transition: opacity 0.25s, transform 0.25s;
+	box-shadow: 0 4px 14px rgba( 0, 0, 0, 0.25 );
+	max-width: 360px;
+}
+
+.woosheet-toast.show {
+	opacity: 1;
+	transform: translateY( 0 );
+}
+
+.woosheet-toast.success {
+	background: #1a7a1a;
+}
+
+.woosheet-toast.error {
+	background: #b32d2e;
+}
+
+/* ----- تقویم شمسی ----- */
+.woosheet-cal {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	box-shadow: 0 8px 24px rgba( 0, 0, 0, 0.18 );
+	width: 240px;
+	padding: 8px;
+	direction: rtl;
+	font-family: 'Vazirmatn', Tahoma, sans-serif;
+}
+
+.woosheet-cal-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 6px;
+}
+
+.woosheet-cal-title {
+	font-weight: 700;
+	font-size: 13px;
+}
+
+.woosheet-cal-nav {
+	border: 0;
+	background: #f0f0f1;
+	border-radius: 5px;
+	width: 26px;
+	height: 26px;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.woosheet-cal-nav:hover {
+	background: #2271b1;
+	color: #fff;
+}
+
+.woosheet-cal-grid {
+	display: grid;
+	grid-template-columns: repeat( 7, 1fr );
+	gap: 2px;
+}
+
+.woosheet-cal-wd {
+	text-align: center;
+	font-size: 11px;
+	color: #787c82;
+	padding: 4px 0;
+}
+
+.woosheet-cal-day {
+	border: 0;
+	background: transparent;
+	border-radius: 5px;
+	padding: 6px 0;
+	cursor: pointer;
+	font-size: 12px;
+	font-family: inherit;
+}
+
+.woosheet-cal-day:hover {
+	background: #e7f0fb;
+}
+
+.woosheet-cal-day.is-today {
+	border: 1px solid #2271b1;
+}
+
+.woosheet-cal-day.is-selected {
+	background: #2271b1;
+	color: #fff;
+}
+
+.woosheet-cal-empty {
+	padding: 6px 0;
+}
+
+.woosheet-cal-foot {
+	display: flex;
+	gap: 6px;
+	margin-top: 8px;
+	border-top: 1px solid #ededf0;
+	padding-top: 8px;
+}
+
+.woosheet-cal-foot-btn {
+	flex: 1;
+	border: 1px solid #c3c4c7;
+	background: #f6f7f7;
+	border-radius: 5px;
+	padding: 5px;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 12px;
+}
+
+.woosheet-cal-foot-btn:hover {
+	background: #e7f0fb;
+}
+
+/* ---------------------- دانلودی‌بودن و لینک‌های دانلود ---------------------- */
+
+.ws-badge-dl {
+	background: #e6f4ea;
+	color: #1e7e4f;
+}
+
+.ws-badge-phys {
+	background: #eef1f4;
+	color: #50575e;
+}
+
+.ws-dl-count {
+	display: inline-block;
+	min-width: 16px;
+	margin-inline-start: 4px;
+	padding: 0 4px;
+	border-radius: 8px;
+	background: rgba(0, 0, 0, 0.08);
+	font-size: 10px;
+	line-height: 16px;
+	text-align: center;
+}
+
+.ws-dl-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.ws-dl-empty {
+	padding: 18px;
+	text-align: center;
+	color: #646970;
+}
+
+/* هر متغیر به‌صورت یک بخش بازشو */
+.ws-dl-group {
+	border: 1px solid #e0e0e3;
+	border-radius: 8px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.ws-dl-group[open] {
+	border-color: #c9d6e4;
+}
+
+.ws-dl-summary {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 12px;
+	background: #f6f7f7;
+	cursor: pointer;
+	list-style: none;
+	font-size: 13px;
+}
+
+.ws-dl-summary::-webkit-details-marker {
+	display: none;
+}
+
+.ws-dl-summary::before {
+	content: '▾';
+	color: #2271b1;
+	font-size: 11px;
+	transition: transform 0.15s;
+}
+
+.ws-dl-group[open] > .ws-dl-summary::before {
+	transform: rotate(180deg);
+}
+
+.ws-dl-summary:hover {
+	background: #eef4fb;
+}
+
+.ws-dl-group-name {
+	font-weight: 500;
+	color: #1d2327;
+}
+
+.ws-dl-group-sku {
+	color: #8c8f94;
+	font-size: 11px;
+	direction: ltr;
+}
+
+.ws-dl-summary .ws-dl-count {
+	margin-inline-start: auto;
+	background: #e7f0fb;
+	color: #2271b1;
+}
+
+.ws-dl-body {
+	padding: 10px 12px 12px;
+}
+
+.ws-dl-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-bottom: 8px;
+}
+
+.ws-dl-chip {
+	background: #f0f0f1;
+	color: #50575e;
+	border-radius: 10px;
+	padding: 2px 8px;
+	font-size: 11px;
+}
+
+.ws-dl-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.ws-dl-item {
+	border: 1px solid #ededf0;
+	border-radius: 6px;
+	padding: 8px 10px;
+	background: #fbfbfc;
+}
+
+.ws-dl-name {
+	font-size: 12px;
+	color: #50575e;
+	margin-bottom: 5px;
+}
+
+.ws-dl-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ws-dl-url {
+	flex: 1;
+	min-width: 0;
+	background: #fff;
+	border: 1px solid #e0e0e3;
+	border-radius: 5px;
+	padding: 5px 8px;
+	font-size: 12px;
+	font-family: Consolas, Monaco, monospace;
+	color: #1d2327;
+	cursor: text;
+	overflow-wrap: anywhere;
+	word-break: break-all;
+	text-align: left;
+}
+
+.ws-dl-copy,
+.ws-dl-copy-all {
+	flex: 0 0 auto;
+	white-space: nowrap;
+}
+
+.ws-dl-copy-all {
+	margin-top: 10px;
+}
+
+.ws-mini-btn.is-copied,
+.ws-mini-btn.is-copied:hover {
+	background: #e6f4ea;
+	border-color: #1e7e4f;
+	color: #1e7e4f;
+}
